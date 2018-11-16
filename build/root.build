@@ -1,5 +1,7 @@
 cxx.std = experimental
 
+cxx.features.symexport = true # Automatically export symbols marked __sympexport
+
 using cxx
 
 assert $cxx.features.modules 'compiler does not support modules'
@@ -9,6 +11,8 @@ ixx{*}: extension = ixx
 txx{*}: extension = txx
 cxx{*}: extension = cxx
 mxx{*}: extension = mxx
+
+
 
 # The test target for cross-testing (running tests under Wine, etc).
 #

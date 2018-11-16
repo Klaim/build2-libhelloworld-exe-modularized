@@ -14,15 +14,16 @@ lib{helloworld-modules}: {hxx ixx txx cxx mxx}{** -version} hxx{version} $imp_li
 
 cxx.poptions =+ "-I$out_root" "-I$src_root"
 
-obja{*}: cxx.poptions += -DLIBHELLOWORLD_MODULES_STATIC_BUILD
-objs{*}: cxx.poptions += -DLIBHELLOWORLD_MODULES_SHARED_BUILD
-
-lib{helloworld-modules}: cxx.export.poptions = "-I$out_root" "-I$src_root"
-
-liba{helloworld-modules}: cxx.export.poptions += -DLIBHELLOWORLD_MODULES_STATIC
-libs{helloworld-modules}: cxx.export.poptions += -DLIBHELLOWORLD_MODULES_SHARED
-
-lib{helloworld-modules}: cxx.export.libs = $int_libs
+# No need anymore to use export macros
+# obja{*}: cxx.poptions += -DLIBHELLOWORLD_MODULES_STATIC_BUILD
+# objs{*}: cxx.poptions += -DLIBHELLOWORLD_MODULES_SHARED_BUILD
+# 
+# lib{helloworld-modules}: cxx.export.poptions = "-I$out_root" "-I$src_root"
+# 
+# liba{helloworld-modules}: cxx.export.poptions += -DLIBHELLOWORLD_MODULES_STATIC
+# libs{helloworld-modules}: cxx.export.poptions += -DLIBHELLOWORLD_MODULES_SHARED
+# 
+# lib{helloworld-modules}: cxx.export.libs = $int_libs
 
 # For pre-releases use the complete version to make sure they cannot be used
 # in place of another pre-release or the final version. See the version module

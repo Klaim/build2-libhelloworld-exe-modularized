@@ -1,6 +1,3 @@
-
-#include <libhelloworld-modules/export.hxx>
-
 export module helloworld;
 import std.core;
 
@@ -10,13 +7,13 @@ export namespace helloworld_modules
   // Print a greeting for the specified name into the specified
   // stream. Throw std::invalid_argument if the name is empty.
   //
-  LIBHELLOWORLD_MODULES_SYMEXPORT void
+  __symexport void
   say_hello (std::ostream&, const std::string& name);
 }
 
 namespace helloworld_modules
 {
-  void say_hello (std::ostream& o, const std::string& n)
+  __symexport void say_hello (std::ostream& o, const std::string& n)
   {
     if (n.empty ())
       throw std::invalid_argument ("empty name");
