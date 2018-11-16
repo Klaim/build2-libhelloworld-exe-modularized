@@ -1,11 +1,14 @@
-cxx.std = latest
+cxx.std = experimental
 
 using cxx
+
+assert $cxx.features.modules 'compiler does not support modules'
 
 hxx{*}: extension = hxx
 ixx{*}: extension = ixx
 txx{*}: extension = txx
 cxx{*}: extension = cxx
+mxx{*}: extension = mxx
 
 # The test target for cross-testing (running tests under Wine, etc).
 #

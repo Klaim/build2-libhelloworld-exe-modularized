@@ -2,15 +2,15 @@ int_libs = # Interface dependencies.
 imp_libs = # Implementation dependencies.
 #import imp_libs += libhello%lib{hello}
 
-lib{helloworld-modules}: {hxx ixx txx cxx}{** -version} hxx{version} $imp_libs $int_libs
+lib{helloworld-modules}: {hxx ixx txx cxx mxx}{** -version} hxx{version} $imp_libs $int_libs
 
 # Include the generated version header into the distribution (so that we don't
 # pick up an installed one) and don't remove it when cleaning in src (so that
 # clean results in a state identical to distributed).
 #
-hxx{version}: in{version} $src_root/manifest
-hxx{version}: dist  = true
-hxx{version}: clean = ($src_root != $out_root)
+{mxx hxx}{version}: in{version} $src_root/manifest
+{mxx hxx}{version}: dist  = true
+{mxx hxx}{version}: clean = ($src_root != $out_root)
 
 cxx.poptions =+ "-I$out_root" "-I$src_root"
 
@@ -36,5 +36,5 @@ else
 # Install into the libhelloworld-modules/ subdirectory of, say, /usr/include/
 # recreating subdirectories.
 #
-{hxx ixx txx}{*}: install         = include/libhelloworld-modules/
-{hxx ixx txx}{*}: install.subdirs = true
+{mxx hxx ixx txx}{*}: install         = include/libhelloworld-modules/
+{mxx hxx ixx txx}{*}: install.subdirs = true

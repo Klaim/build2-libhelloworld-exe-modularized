@@ -1,4 +1,4 @@
-cxx.std = latest
+cxx.std = experimental
 
 using cxx
 
@@ -6,6 +6,7 @@ hxx{*}: extension = hxx
 ixx{*}: extension = ixx
 txx{*}: extension = txx
 cxx{*}: extension = cxx
+mxx{*}: extension = mxx
 
 # Every exe{} in this subproject is by default a test.
 #

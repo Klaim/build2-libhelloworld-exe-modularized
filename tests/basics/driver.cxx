@@ -1,9 +1,7 @@
 #include <cassert>
-#include <sstream>
-#include <stdexcept>
 
-#include <libhelloworld-modules/version.hxx>
-#include <libhelloworld-modules/helloworld-modules.hxx>
+import std.core;
+import helloworld;
 
 int main ()
 {
