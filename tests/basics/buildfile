@@ -1,0 +1,3 @@
+import libs = libhelloworld-modules%lib{helloworld-modules}
+
+exe{driver}: {hxx ixx txx cxx}{**} $libs testscript{**}

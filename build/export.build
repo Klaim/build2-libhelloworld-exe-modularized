@@ -1,0 +1,6 @@
+$out_root/
+{
+  include libhelloworld-modules/
+}
+
+export $out_root/libhelloworld-modules/$import.target
