@@ -8,3 +8,8 @@ email: mjklaim@gmail.com
 depends: * build2 >= 0.8.0-
 depends: * bpkg >= 0.8.0-
 #depends: libhello ^1.0.0
+
+requires: c++21 ; Using modules
+build-exclude: * ; Only build using toolsets that have modules support.
+build-include: *-msvc_15u9*
+
