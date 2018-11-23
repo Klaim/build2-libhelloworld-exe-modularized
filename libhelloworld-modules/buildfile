@@ -8,9 +8,9 @@ lib{helloworld-modules}: {hxx ixx txx cxx mxx}{** -version} hxx{version} $imp_li
 # pick up an installed one) and don't remove it when cleaning in src (so that
 # clean results in a state identical to distributed).
 #
-{mxx hxx}{version}: in{version} $src_root/manifest
-{mxx hxx}{version}: dist  = true
-{mxx hxx}{version}: clean = ($src_root != $out_root)
+{hxx}{version}: in{version} $src_root/manifest
+{hxx}{version}: dist  = true
+{hxx}{version}: clean = ($src_root != $out_root)
 
 cxx.poptions =+ "-I$out_root" "-I$src_root"
 
